@@ -1,0 +1,104 @@
+/*
+  makes the element the tooltip is attached to relatively positioned
+  so that we can position the ::before && ::after elements around it
+*/
+[data-ctip] {
+  position: relative;
+}
+
+/* tooltip arrow */
+[data-ctip]::before {
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 4px solid var(--ctip-background-color, #000000);
+  content: '';
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  top: -7px;
+  transform: translateX(-50%);
+  transition: opacity 200ms linear;
+  z-index: 5;
+}
+
+/* tooltip body */
+[data-ctip]::after {
+  background-color: var(--ctip-background, #000000);
+  border-radius: 5px;
+  color: var(--ctip-color, #ffffff);
+  content: attr(data-ctip);
+  font-size: 10px;
+  left: 50%;
+  opacity: 0;
+  padding: 7px;
+  position: absolute;
+  text-align: center;
+  top: -7px;
+  transform: translateX(-50%) translateY(-100%);
+  transition: opacity 200ms linear;
+}
+
+/* show on hover */
+[data-ctip]:hover::after,
+[data-ctip]:hover::before {
+  opacity: var(--ctip-opacity, 0.8);
+}
+
+/*
+  tooltip positioned to the top
+
+  this is the default style, and is set on the base
+  elements themselves, but listed here for ease of
+  custom styling
+*/
+[data-ctip-position='top']::before {
+  left: 50%;
+  top: -7px;
+  transform: translateX(-50%);
+}
+
+[data-ctip-position='top']::after {
+  left: 50%;
+  top: -7px;
+  transform: translateX(-50%) translateY(-100%);
+}
+
+/* tooltip positioned to the bottom */
+[data-ctip-position='bottom']::before {
+  left: 50%;
+  top: calc(100% + 4px);
+  transform: translateX(-50%) rotate(180deg);
+}
+
+[data-ctip-position='bottom']::after {
+  left: 50%;
+  top: calc(100% + 8px);
+  transform: translateX(-50%) translateY(0%);
+}
+
+/* tooltip positioned to the left */
+[data-ctip-position='left']::before {
+  left: -13px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+[data-ctip-position='left']::after {
+  left: -8px;
+  top: 50%;
+  transform: translateX(-100%) translateY(-50%);
+}
+
+/* tooltip positioned to the right */
+[data-ctip-position='right']::before {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+[data-ctip-position='right']::after {
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateX(0%) translateY(-50%);
+}
