@@ -1,3 +1,5 @@
+/* inspired from https://medium.freecodecamp.org/a-step-by-step-guide-to-making-pure-css-tooltips-3d5a3e237346 */
+
 /*
   makes the element the tooltip is attached to relatively positioned
   so that we can position the ::before && ::after elements around it
