@@ -45,6 +45,7 @@
 [data-ctip]:hover::after,
 [data-ctip]:hover::before {
   opacity: var(--ctip-opacity, 0.8);
+  transition: opacity 2000ms cubic-bezier(1.000, -0.405, 0.105, 0.400);
 }
 
 /*
