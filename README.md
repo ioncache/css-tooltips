@@ -1,2 +1,2 @@
-# css-tooltips
+# ctips
 Pure CSS tooltips
