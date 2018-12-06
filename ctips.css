@@ -1,6 +1,14 @@
 /* inspired from https://medium.freecodecamp.org/a-step-by-step-guide-to-making-pure-css-tooltips-3d5a3e237346 */
 
 /*
+  css variables used:
+
+  --ctip-background-color: the background color of the tooltip, and the tooltip's arrow
+  --ctip-color: the text color of the tooltop
+  --ctip-focus: box-shadow style for :focus of the tooltip
+*/
+
+/*
   makes the element the tooltip is attached to relatively positioned
   so that we can position the ::before && ::after elements around it
 */
