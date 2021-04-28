@@ -4,7 +4,7 @@
   css variables used:
 
   --ctip-background-color: the background color of the tooltip, and the tooltip's arrow
-  --ctip-color: the text color of the tooltop
+  --ctip-color: the text color of the tooltip
   --ctip-focus: box-shadow style for :focus of the tooltip
 */
 
@@ -19,7 +19,7 @@
     remove the browser default focus style as in Chrome the tooltip
     gets outlined as well as the base element
 
-    newfocus style added below so accessibility is still acceptible
+    new focus style added below so accessibility is still acceptable
   */
   box-shadow: none;
   outline: none;
@@ -29,13 +29,13 @@
   remove the browser default focus states as in Firefox the tooltip
   gets outlined as well as the base element
 
-  new focus style added below so accessibility is still acceptible
+  new focus style added below so accessibility is still acceptable
 */
 [data-ctip]::-moz-focus-inner {
   border: 0;
 }
 
-/* this is to keep the underlying element of the ctips accessibile */
+/* this is to keep the underlying element of the ctips accessible */
 [data-ctip]:focus {
   box-shadow: var(--ctip-focus, 0px 0px 0px 1px #4D90FE);
 }
